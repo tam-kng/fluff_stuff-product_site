@@ -1,41 +1,46 @@
-.header {
-    grid-area: header;
-}
-.banner {
-    grid-area: banner;
-}
-.promos {
-    grid-area: promos;
+* {
+    font-family: Verdana;
 }
 
-.grid-container {
+.header { 
+    grid-area: 1 / 1 / 2 / 8; 
+}
+
+.banner {
+    grid-area: 1 / 1 / 3 / 8;
+}
+
+.promos {
+    grid-area: 3 / 1 / 4 / 8;
+}
+
+.home-grid-container {
     display: grid;
-    grid-template-areas:
-        'header header'
-        'banner banner'
-        'promos promos'
-        'promos promos';
-    grid-gap: 10px;
-    padding: 5px 0;
+    grid-template-columns: 90px 290px 290px 290px 290px 90px;
+    grid-template-rows: 74px 604px 600px;
+    column-gap: 20px;
+  
     background-color: #2196F3;
 }
 
-.grid-container > div {
+.home-grid-container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: 0 0;
-  }
+    font-size: 30px;
+}
 
 .nav {
   position: relative;
-  background-color: #333;
   overflow: hidden;
+  width: 100%
 }
 
 /* Style the links inside the navigation bar */
 .nav a {
   float: left;
-  color: #f2f2f2;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -55,7 +60,7 @@
 }
 
 /* Centered section inside the top navigation */
-.nav-center a {
+.nav-center {
   float: none;
   position: absolute;
   top: 50%;
@@ -66,4 +71,48 @@
 /* Right-aligned section inside the top navigation */
 .nav-right {
   float: right;
+}
+
+h1 {
+    text-align: center
+}
+
+.banner {
+    background-image: url('img_home_banner.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.promo-1 { 
+    grid-area: 1 / 1 / 2 / 2; 
+}
+
+.promo-2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.promo-3 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.promo-4 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.promos-grid-container {
+    display: grid;
+    grid-template-columns: 599px 599px;
+    grid-template-rows: 291px 291px;
+    column-gap: 20px;
+    row-gap: 20px;
+    text-align: center;
+    background-color: #2196F3;
+    border-radius: 5px;
+}
+
+.promos-grid-container > div{
+    width: 599px;
+    height: 291px;
+    background-color: green;
+    border-radius: 5px;
 }
