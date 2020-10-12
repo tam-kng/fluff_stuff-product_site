@@ -6,7 +6,6 @@
     column-gap: 20px;
     row-gap: 20px;
 }
-
     .home-grid-container > div {
         display: flex;
         justify-content: center;
@@ -63,7 +62,6 @@ h1 {
 
     .promo-1 { 
         grid-area: 1 / 1 / 2 / 2;
-        text-justify: center;
     }
 
     .promo-2 {

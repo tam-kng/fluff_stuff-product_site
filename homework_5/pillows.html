@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    <meta charset="UTF-8">
     <head>
+        <title>Fluff Stuff Pillow Products Page</title>
         <link rel="stylesheet" href="site.css">
         <link rel="stylesheet" href="pillows.css">
     </head>
@@ -16,7 +18,7 @@
                     <div class="nav-center">
                         <a href="pillows.html">Sheets</a>
                         <a href="pillows.html">Cushions</a>
-                        <a href="pillows.html">Pillows</a>
+                        <a id="pillows-link" href="pillows.html">Pillows</a>
                         <a href="pillows.html">Sale</a>
                     </div>
                 
@@ -29,19 +31,24 @@
                     </div>
                 </div>
             </div>
+            <!-- Product Space -->
             <div class="products">
+                <!-- Breadcrumb Navigation -->
                 <ul class="breadcrumbs">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Products</a></li>
                     <li>Pillows</li>
                 </ul>
+                <!-- Sort Categories -->
                 <div class="categories">
                     <div id="color-dropdown">Color</div>
                     <div id="fill-dropdown">Fill</div>
                     <div id="sort-by-dropdown">Sort By</div>
                 </div>
+                <!-- Products -->
                 <div id=product-1>
                     <img src="images/img_couch_pillow.jpg" alt="couch pillow"/>
+                    <!-- Product Information -->
                     <div class="product-text">
                         <a id="product-1-modal-link" href="#couch-pillow-modal">Couch Pillow</a>
                         <div>&#9733;&#9733;&#9733;&#9733;&#9734;</div>
@@ -53,6 +60,7 @@
                 </div>
                 <div id=product-2>
                     <img src="images/img_bed_pillow.jpg" alt="bed pillow"/>
+                    <!-- Product Information -->
                     <div class="product-text">
                         <div>Woven Bed Pillow</div>
                         <div>&#9733;&#9733;&#9733;&#9733;&#9734;</div>
@@ -64,6 +72,7 @@
                 </div>
                 <div id=product-3>
                     <img src="images/img_floor_pouf.jpg" alt="floor pouf"/>
+                    <!-- Product Information -->
                     <div class="product-text">
                         <div>Floor Pouf</div>
                         <div>&#9733;&#9733;&#9733;&#9733;&#9734;</div>
@@ -75,6 +84,7 @@
                 </div>
                 <div id=product-4>
                     <img src="images/img_round_pillow.jpg" alt="round pillow"/>
+                    <!-- Product Information -->
                     <div class="product-text">
                         <div>Velvet Round Pillow</div>
                         <div>&#9733;&#9733;&#9733;&#9733;&#9734;</div>
@@ -85,6 +95,7 @@
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
+            <!-- Product Modals -->
             <div class="product-1-modal">
                 <div id="couch-pillow-modal">
                     <div class="modal-content">
@@ -94,16 +105,18 @@
                             <h2>&#9733;&#9733;&#9733;&#9733;&#9734;</h2>
                             <h2>$24.99</h2>
                             This is product information text about this product's information.
-                            <select id="modal-color-dropdown">
-                                <option>After School Special</option>
-                                <option>Morning Haze</option>
-                                <option>Cozy Denim</option>
-                                <option>Rainy Day</option>
+                            <select id="modal-color-dropdown" required>
+                                <option value="" disabled selected>Select a color</option>
+                                <option value="After School Special">After School Special</option>
+                                <option value="Morning Haze">Morning Haze</option>
+                                <option value="Cozy Denim">Cozy Denim</option>
+                                <option value="Rainy Day">Rainy Day</option>
                             </select>
                             <select id="modal-fill-dropdown">
-                                <option>After School Special</option>
-                                <option>Morning Haze</option>
-                                <option>Cozy Denim</option>
+                                <option value="" disabled selected>Select a fill</option>
+                                <option value="Duck Down">Duck Down</option>
+                                <option value="Hypoallergenic Poly-Blend">Hypoallergenic Poly-Blend</option>
+                                <option value="Memory Foam">Memory Foam</option>
                             </select>
                             <button id="modal-add-to-cart">Add to Cart</button>
                         </div>

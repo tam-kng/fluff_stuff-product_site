@@ -1,3 +1,8 @@
+/* Nav Styles */
+#pillows-link {
+    font-weight: bold;
+}
+
 /* Grid Styles */
 .pillows-grid-container {
     display: grid;
@@ -23,29 +28,23 @@
     list-style: none;
     background-color: #eee;
 }
-    /* Display list items side by side */
+    /* display list items */
     ul.breadcrumbs li {
         display: inline;
         font-size: 14px;
     }
   
-    /* Add a slash symbol (/) before/behind each list item */
+    /* adds slashes */
     ul.breadcrumbs li+li:before {
         padding: 8px;
         color: black;
         content: ">\00a0";
     }
   
-    /* Add a color to all links inside the list */
+    /* add color to links */
     ul.breadcrumbs li a {
         color: #0275d8;
         text-decoration: none;
-    }
-  
-    /* Add a color on mouse-over */
-    ul.breadcrumbs li a:hover {
-        color: #01447e;
-        text-decoration: underline;
     }
 
 /* Sort Category Styles */
@@ -73,6 +72,7 @@
         float: right;
     }
 
+/* Product Styles */
 .product {
     position: relative;
     overflow: hidden;
@@ -128,16 +128,7 @@
         float: right;
     }
 
-/*
-.products > .product:not(:first-child) {
-    display: inline-block;
-    width: 291px;
-    height: 343px;
-    border-radius: 5px;
-    margin: 10px;
-    border-style: solid;
-}
-*/
+/* Product Modal Styles */
 
 #couch-pillow-modal {
     position:fixed;
