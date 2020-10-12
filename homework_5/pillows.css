@@ -1,31 +1,195 @@
-/* Style the list */
-ul.breadcrumbs {
+/* Grid Styles */
+.pillows-grid-container {
+    display: grid;
+    grid-template-columns: 90px 290px 290px 290px 290px 90px;
+    grid-template-rows: 74px 950px;
+    column-gap: 20px;
+  
+    background-color: #2196F3;
+}
+
+    .header { 
+        grid-area: 1 / 1 / 2 / 8;
+        display: flex;
+        background-color: rgba(255, 255, 255, 0.8);
+        font-size: 30px;
+    }
+
+    .products {
+        grid-area: 2 / 2 / 3 / 7;
+    }
+
+/* List Styles */
+.breadcrumbs {
     padding: 10px 16px;
     list-style: none;
     background-color: #eee;
-  }
+}
+    /* Display list items side by side */
+    ul.breadcrumbs li {
+        display: inline;
+        font-size: 14px;
+    }
   
-  /* Display list items side by side */
-  ul.breadcrumbs li {
-    display: inline;
-    font-size: 18px;
-  }
+    /* Add a slash symbol (/) before/behind each list item */
+    ul.breadcrumbs li+li:before {
+        padding: 8px;
+        color: black;
+        content: ">\00a0";
+    }
   
-  /* Add a slash symbol (/) before/behind each list item */
-  ul.breadcrumbs li+li:before {
-    padding: 8px;
-    color: black;
-    content: "/\00a0";
-  }
+    /* Add a color to all links inside the list */
+    ul.breadcrumbs li a {
+        color: #0275d8;
+        text-decoration: none;
+    }
   
-  /* Add a color to all links inside the list */
-  ul.breadcrumbs li a {
-    color: #0275d8;
-    text-decoration: none;
-  }
+    /* Add a color on mouse-over */
+    ul.breadcrumbs li a:hover {
+        color: #01447e;
+        text-decoration: underline;
+    }
+
+/* Sort Category Styles */
+.categories {
+    position: relative;
+    overflow: hidden;
+    width: 100%
+}
   
-  /* Add a color on mouse-over */
-  ul.breadcrumbs li a:hover {
-    color: #01447e;
-    text-decoration: underline;
-  }
+    /* Navigation Bar Link Styles */
+    .categories div {
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        width: 100px;
+        background-color: grey;
+        border-radius: 20px;
+    }
+  
+    /* Navigation Bar Right-aligned Styles */
+    #sort-by-dropdown {
+        float: right;
+    }
+
+.products > div:not(:first-of-type) {
+    display: inline-block;
+    width: 22%;
+    height: 343px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-color: gray;
+    
+    line-height: 35px;
+}
+    #product-1 {
+        margin-right: 10px;
+    }
+
+    #product-2, #product-3 {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    #product-4 {
+        margin-left: 10px;
+    }
+
+    #product-1 > img, #product-2 > img, #product-3 > img, #product-4 > img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .product-text {
+        padding: 0px;
+        margin-left: 10px;
+        margin-right: 10px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .add-to-cart {
+        float: right;
+    }
+
+/*
+.products > .product:not(:first-child) {
+    display: inline-block;
+    width: 291px;
+    height: 343px;
+    border-radius: 5px;
+    margin: 10px;
+    border-style: solid;
+}
+*/
+
+#couch-pillow-modal {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.75);
+    display:none;
+}
+    #couch-pillow-modal .modal-content {
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        width:65%;
+        height: 80%;
+        padding:10px 20px;
+        background-image: url(images/img_couch_pillow.jpg);
+        background-color: white;
+        background-repeat: no-repeat;
+        background-size: 70% 100%;
+    }
+
+    #couch-pillow-modal .product-description {
+        max-width: 23%;
+        height: 100%;
+        float: right;
+        padding-right: 50px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #couch-pillow-modal .product-description select {
+        width: 100%;
+        height: 7%;
+    }
+
+    #couch-pillow-modal #modal-color-dropdown{
+        margin-top: 30%;
+    }
+
+    #couch-pillow-modal #modal-fill-dropdown{
+        margin-top: 7%;
+    }
+
+    #couch-pillow-modal #modal-add-to-cart {
+        margin-top: auto;
+        width: 100%;
+        height: 10%;
+    }
+
+    #couch-pillow-modal a.close-popup {
+        position:absolute;
+        top:20px;
+        right:20px;
+        font-size:20px;
+        font-weight:600;
+        text-decoration:none;
+    }
+    #couch-pillow-modal:target {
+        display:block;
+    }
+  
+  

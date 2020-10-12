@@ -35,7 +35,7 @@ h1 {
 
 /* Banner Styles */
 .banner {
-    background-image: url('img_home_banner.jpg');
+    background-image: url('images/img_home_banner.jpg');
     background-repeat: no-repeat;
     background-size: contain;
 }

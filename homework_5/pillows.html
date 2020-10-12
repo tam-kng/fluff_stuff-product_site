@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="pillows.css">
     </head>
     <body>
-        <div class="home-grid-container">
+        <div class="pillows-grid-container">
             <div class="header">
                 <!-- Navigation Bar -->
                 <div class="nav">
@@ -34,6 +34,80 @@
                     <li><a href="#">Products</a></li>
                     <li>Pillows</li>
                 </ul>
+                <div class="categories">
+                    <div id="color-dropdown">Color</div>
+                    <div id="fill-dropdown">Fill</div>
+                    <div id="sort-by-dropdown">Sort By</div>
+                </div>
+                <div id=product-1>
+                    <img src="images/img_couch_pillow.jpg" alt="couch pillow"/>
+                    <div class="product-text">
+                        <a id="product-1-modal-link" href="#couch-pillow-modal">Couch Pillow</a>
+                        <div>&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                    </div>
+                    <div class="product-text">
+                        <div>$24.99</div>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div id=product-2>
+                    <img src="images/img_bed_pillow.jpg" alt="bed pillow"/>
+                    <div class="product-text">
+                        <div>Woven Bed Pillow</div>
+                        <div>&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                    </div>
+                    <div class="product-text">
+                        <div>$39.99</div>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div id=product-3>
+                    <img src="images/img_floor_pouf.jpg" alt="floor pouf"/>
+                    <div class="product-text">
+                        <div>Floor Pouf</div>
+                        <div>&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                    </div>
+                    <div class="product-text">
+                        <div>$19.99</div>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div id=product-4>
+                    <img src="images/img_round_pillow.jpg" alt="round pillow"/>
+                    <div class="product-text">
+                        <div>Velvet Round Pillow</div>
+                        <div>&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                    </div>
+                    <div class="product-text">
+                        <div>$29.99</div>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-1-modal">
+                <div id="couch-pillow-modal">
+                    <div class="modal-content">
+                        <a href="#" class="close-popup">&times;</a>
+                        <div class="product-description">
+                            <h2>Artisan Couch Pillow</h2>
+                            <h2>&#9733;&#9733;&#9733;&#9733;&#9734;</h2>
+                            <h2>$24.99</h2>
+                            This is product information text about this product's information.
+                            <select id="modal-color-dropdown">
+                                <option>After School Special</option>
+                                <option>Morning Haze</option>
+                                <option>Cozy Denim</option>
+                                <option>Rainy Day</option>
+                            </select>
+                            <select id="modal-fill-dropdown">
+                                <option>After School Special</option>
+                                <option>Morning Haze</option>
+                                <option>Cozy Denim</option>
+                            </select>
+                            <button id="modal-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
