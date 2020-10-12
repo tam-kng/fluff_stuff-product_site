@@ -1,22 +1,20 @@
 /* Grid Styles */
 .pillows-grid-container {
     display: grid;
-    grid-template-columns: 90px 290px 290px 290px 290px 90px;
+    grid-template-columns: 90px auto 90px;
     grid-template-rows: 74px 950px;
     column-gap: 20px;
-  
-    background-color: #2196F3;
 }
 
     .header { 
-        grid-area: 1 / 1 / 2 / 8;
+        grid-area: 1 / 1 / 2 / 4;
         display: flex;
         background-color: rgba(255, 255, 255, 0.8);
         font-size: 30px;
     }
 
     .products {
-        grid-area: 2 / 2 / 3 / 7;
+        grid-area: 2 / 2 / 3 / 3;
     }
 
 /* List Styles */
@@ -75,13 +73,20 @@
         float: right;
     }
 
+.product {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
 .products > div:not(:first-of-type) {
     display: inline-block;
     width: 22%;
-    height: 343px;
+    height: 375px;
     border-radius: 5px;
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 2%;
     border-style: solid;
     border-color: gray;
     
@@ -103,6 +108,11 @@
     #product-1 > img, #product-2 > img, #product-3 > img, #product-4 > img {
         max-width: 100%;
         height: auto;
+    }
+
+    .products > div:not(:first-of-type) > button {
+        height: 10%;
+        margin-right: 4%;
     }
 
     .product-text {

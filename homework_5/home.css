@@ -2,10 +2,9 @@
 .home-grid-container {
     display: grid;
     grid-template-columns: 90px 290px 290px 290px 290px 90px;
-    grid-template-rows: 74px 604px 600px;
+    grid-template-rows: 74px 550px 600px;
     column-gap: 20px;
-  
-    background-color: #2196F3;
+    row-gap: 20px;
 }
 
     .home-grid-container > div {
@@ -36,8 +35,8 @@ h1 {
 /* Banner Styles */
 .banner {
     background-image: url('images/img_home_banner.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100% 100%;
+    color: #BFEDFC;
 }
 
 /* Promo Grid Styles */
@@ -48,19 +47,23 @@ h1 {
     column-gap: 20px;
     row-gap: 20px;
     text-align: center;
-    background-color: #2196F3;
     border-radius: 5px;
+    color: #6E879A;
 }
 
     .promos-grid-container > div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 599px;
         height: 291px;
-        background-color: green;
+        background-color: #BFEDFC;
         border-radius: 5px;
     }
 
     .promo-1 { 
-        grid-area: 1 / 1 / 2 / 2; 
+        grid-area: 1 / 1 / 2 / 2;
+        text-justify: center;
     }
 
     .promo-2 {
