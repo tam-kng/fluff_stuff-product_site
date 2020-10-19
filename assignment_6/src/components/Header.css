@@ -34,7 +34,6 @@
   
     /* Navigation Bar Center Styles */
     .nav-center {
-        float: none;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -43,5 +42,5 @@
   
     /* Navigation Bar Right-aligned Styles */
     .nav-right {
-        text-align: right;
+        float: right;
     }
