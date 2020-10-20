@@ -27,11 +27,30 @@
 
 .banner {
     background-image: url("./images/img_home_banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 15%;
 }
 
-.promo {
-    border: 20px solid red;
-    padding: 15px;
-    border: 1px solid red;
+[class*="promo"] {
+    color: #6E879A;
+    background-color: #BFEDFC;
+    border-radius: 5px;
+    font-size: 30px;
+}
+
+.promo-top {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.promo-left {
+    margin-left: 7.33%;
+    margin-right: 1%;
+    padding: 100px;
+}
+
+.promo-right {
+    margin-left: 1%;
+    padding: 100px;
 }
