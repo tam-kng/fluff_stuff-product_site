@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import "./Main.css";
+import "./Home.css";
 
-function Main() {
+function Home() {
     return (
         <main>
             <div className="banner">
@@ -21,4 +21,4 @@ function Main() {
     )
 }
 
-export default Main
+export default Home

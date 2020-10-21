@@ -3,29 +3,32 @@ import logo from '../logo.svg';
 
 import './App.css';
 import Header from "./Header";
-import Main from "./Main";
+import Home from "./Home";
 import Footer from "./Footer";
 
-/*
+let pages = {
+  "home": <Home />,
+  "pillows": "pillows",
+  "cart": "cart"
+};
+
 class App extends React.Component {
-  render(){
-    return(
+  constructor() {
+    super();
+    this.state = {
+      pageNumber: "home"
+    }
+  }
+
+  render() {
+    return (
       <div className="App">
-        <Nav />
+        <Header />
+        {pages[this.state.pageNumber]}
+        <Footer />
       </div>
     );
   }
-}
-*/
-
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Main />
-      <Footer />
-    </div>
-  );
 }
 
 export default App;
