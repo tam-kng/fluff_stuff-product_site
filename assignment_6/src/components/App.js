@@ -38,7 +38,7 @@ class App extends React.Component {
     this.setState((state) => {
       return {
         cart: state.cart + 1,
-        cartItems: state.cartItems.concat([[name, color, fill]])
+        cartItems: state.cartItems.concat([{name, color, fill}])
       }
     });
 

@@ -49,7 +49,9 @@ class Cart extends React.Component {
             console.log("Item: ", this.props.cartItems[i]);
 
             productList.push(
-                <div className="col-5 product-container">Filler</div>
+                <div className="col-5 product-container" key={i}>
+                    Filler
+                </div>
             );
         }
 
