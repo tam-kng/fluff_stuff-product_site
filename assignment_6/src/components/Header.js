@@ -1,39 +1,40 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import {FaShoppingCart} from "react-icons/fa";
+import {IconContext} from "react-icons";
 
 import './Header.css';
 
 class Header extends React.Component {
-    constructor(){
-        super();
-        this.state = {
-            pageName: "home"
-        }
-    }
-    
-    changePage(pageName){
-        this.pageName = pageName;
-        console.log(this.pageName);
+    constructor(props){
+        super(props);
     }
 
     render() {
         return (
             <header>
                 <div className="nav">
-                    <a href="home.html">Logo</a>
+                    <button href="home.html">Logo</button>
     
                     <div className="nav-center">
-                        <a href="pillows.html">Sheets</a>
-                        <a href="pillows.html">Cushions</a>
-                        <a href="pillows.html" onClick={this.changePage("pillows")}>Pillows</a>
-                        <a href="pillows.html">Sale</a>
+                        <button href="pillows.html">Sheets</button>
+                        <button href="pillows.html">Cushions</button>
+                        <button onClick={(e) => this.props.changePage("pillows")}>Pillows</button>
+                        <button href="pillows.html">Sale</button>
                     </div>
     
                     <div className="nav-right">
-                        <a href="about-us.html">About</a>
-                        <a href="contact-us.html">Contact</a>
-                        <a href="account.html">Account</a>
-                        <a href="cart.html">Cart</a>
+                        <button href="about-us.html">About</button>
+                        <button href="contact-us.html">Contact</button>
+                        <button href="account.html">Account</button>
+                        <button onClick={(e) => this.props.changePage("cart")}>
+                            <IconContext.Provider value={{style: {color: '#6E879A', fontSize: '25px'}}}>
+                                <FaShoppingCart />
+                            </IconContext.Provider>
+                        </button>
+                        <button disabled>
+                            {this.props.cartItemNum}
+                        </button>
                     </div>
                 </div>
             </header>
