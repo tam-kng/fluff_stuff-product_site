@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-//import "./Cart.css";
+import "./Cart.css";
 
 class Cart extends React.Component {
     constructor(props){
@@ -49,9 +49,13 @@ class Cart extends React.Component {
             console.log("Item: ", this.props.cartItems[i]);
 
             productList.push(
-                <div className="col-5 product-container" key={i}>
-                    Filler
-                </div>
+                <React.Fragment key={i}>
+                    <div className="cart-product-container">
+                        <h4>{this.props.cartItems[i].name}</h4>
+                        <div>{this.props.cartItems[i].color}</div>
+                        <div>{this.props.cartItems[i].fill}</div>
+                    </div>
+                </React.Fragment>
             );
         }
 
@@ -63,7 +67,9 @@ class Cart extends React.Component {
         return (
             <main>
                 <h2>Cart</h2>
-                {this.renderProducts()}
+                <div className = "col-5 products-list">
+                    {this.renderProducts()}
+                </div>
                 <div className="col-3 cart-summary">
                     Static Filler
                 </div>
