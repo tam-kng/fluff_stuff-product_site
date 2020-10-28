@@ -29,7 +29,7 @@ class Pillows extends React.Component {
                         <div className="product-text">
                             <div>$24.99</div>
                         </div>
-                        <button className="add-to-cart" onClick={(e) => this.props.addToCart(this.props.cartItemNum, "Couch Pillow", "After School Special", "Duck Down")}>Add to Cart</button>
+                        <button className="add-to-cart" onClick={(e) => this.props.addToCart(this.props.cartItemNum, "Couch Pillow", "After School Special", "Duck Down", 25)}>Add to Cart</button>
                     </div>
                     <div className="col-2 product-container">
                         <img src={require("./images/img_bed_pillow.jpg")} alt="bed pillow"/>
@@ -40,7 +40,7 @@ class Pillows extends React.Component {
                         <div className="product-text">
                             <div>$39.99</div>
                         </div>
-                        <button className="add-to-cart">Add to Cart</button>
+                        <button className="add-to-cart" onClick={(e) => this.props.addToCart(this.props.cartItemNum, "Bed Pillow", "After School Special", "Duck Down", 40)}>Add to Cart</button>
                     </div>
                     <div className="col-2 product-container">
                         <img src={require("./images/img_floor_pouf.jpg")} alt="floor pouf"/>

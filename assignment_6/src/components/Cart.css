@@ -27,14 +27,51 @@
 
 .products-list {
     margin-top: 30px;
-    margin-left: 16.66%;
+    margin-left: 8.33%;
 }
 
 .cart-product-container {
-    /*display: block;*/
+    display: flex;
     margin-bottom: 10%;
 
     border-style:solid;
     border-color: #6E879A;
     border-radius: 5px;
 }
+    .cart-product-container > img {
+        max-width: 50%;
+        height: auto;
+    }
+    .cart-product-description {
+        text-align: left;
+        margin-left: 20px;
+    }
+
+.cart-summary {
+    margin-top: 30px;
+    margin-left: 16.66%;
+    
+    padding-bottom: 10%;
+
+    border-style:solid;
+    border-color: #6E879A;
+    border-radius: 5px;
+}
+    .cart-summary-row {
+        display: flex;
+        margin-top: 10%;
+        margin-left: 10%;
+    }
+
+    .cost {
+        margin-left: 50%;
+    }
+
+    .divider {
+        margin-top: 10%;
+    }
+
+    .cart-summary-row:last-of-type {
+        margin-top: 20%;
+        font-size: 20px;
+    }

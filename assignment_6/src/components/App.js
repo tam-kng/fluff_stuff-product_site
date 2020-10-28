@@ -34,11 +34,11 @@ class App extends React.Component {
     });
   }
 
-  addToCart(cartItemNum, name, color, fill) {
+  addToCart(cartItemNum, name, color, fill, cost) {
     this.setState((state) => {
       return {
         cart: state.cart + 1,
-        cartItems: state.cartItems.concat([{name, color, fill}])
+        cartItems: state.cartItems.concat([{name, color, fill, cost}])
       }
     });
 
