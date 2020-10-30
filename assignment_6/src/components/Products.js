@@ -1,35 +1,35 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { FontAwesome } from "react-icons/fa";
 
-import {FaShoppingCart} from "react-icons/fa";
 import "./Products.css";
 import Pillow from "./Pillow.js";
 
+// handles product page
 class Products extends React.Component {
     constructor(props) {
         super(props);
+        // handle modal variables
         this.state = {
             color: "Select Below",
             fill: "Select Below",
-            value: "coconut"
         }
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // handle changes to dropwdowns
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value
         });
     }
 
+    // handle submission of product details
     handleSubmit(event) {
-
         event.preventDefault();
     }
 
+    // render HTML
     render() {
         return (
             <main>

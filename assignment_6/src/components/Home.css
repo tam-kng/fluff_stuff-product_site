@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+/* Column Styles */
 .row::after {
     content: "";
     clear: both;
@@ -25,6 +26,7 @@
     float: left;
   }
 
+/* Home styles*/
 .banner {
     background-image: url("./images/img_home_banner.jpg");
     background-repeat: no-repeat;

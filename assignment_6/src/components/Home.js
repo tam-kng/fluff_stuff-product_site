@@ -1,8 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
 import "./Home.css";
 
+// handles Home
 function Home() {
     return (
         <main>
