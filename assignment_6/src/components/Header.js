@@ -19,7 +19,7 @@ class Header extends React.Component {
                     <div className="nav-center">
                         <button href="pillows.html">Sheets</button>
                         <button href="pillows.html">Cushions</button>
-                        <button onClick={(e) => this.props.changePage("pillows")}>Pillows</button>
+                        <button onClick={(e) => this.props.changePage("products")}>Pillows</button>
                         <button href="pillows.html">Sale</button>
                     </div>
     

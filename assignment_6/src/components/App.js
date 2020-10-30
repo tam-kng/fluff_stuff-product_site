@@ -4,7 +4,7 @@ import logo from '../logo.svg';
 import './App.css';
 import Header from "./Header";
 import Home from "./Home";
-import Pillows from "./Pillows";
+import Products from "./Products";
 import Cart from "./Cart";
 import Footer from "./Footer";
 
@@ -23,7 +23,7 @@ class App extends React.Component {
 
     this.pages = {
         "home": <Home changePage={this.changePage}/>,
-        "pillows": <Pillows changePage={this.changePage} addToCart={this.addToCart} cartItemNum={this.state.cart}/>,
+        "products": <Products changePage={this.changePage} addToCart={this.addToCart} cartItemNum={this.state.cart}/>,
         "cart": <Cart cartItems={this.state.cartItems}/>
     };
   }
@@ -65,11 +65,11 @@ class App extends React.Component {
         </div>
       );
     }
-    else if (this.state.page == "pillows") {
+    else if (this.state.page == "products") {
       return (
         <div className="App">
           <Header changePage={this.changePage} cartItemNum={this.state.cart.toString()}/>
-          <Pillows changePage={this.changePage} addToCart={this.addToCart} cartItemNum={this.state.cart}/>
+          <Products changePage={this.changePage} addToCart={this.addToCart} cartItemNum={this.state.cart}/>
           <Footer />
         </div>
       );

@@ -65,6 +65,33 @@ class Cart extends React.Component {
         }
     }
 
+    calculateShipping() {
+        if (this.subtotal == 0) {
+            return "0.00"
+        }
+        else {
+            return this.shipping;
+        }
+    }
+
+    calculateTax() {
+        if (this.subtotal == 0) {
+            return "0.00"
+        }
+        else {
+            return this.tax;
+        }
+    }
+
+    calculateTotal() {
+        if (this.subtotal == 0) {
+            return "0.00"
+        }
+        else {
+            return this.subtotal + this.shipping + this.tax;
+        }
+    }
+
     renderProducts() {
         let productList = [];
         for (let i=0; i < this.props.cartItems.length; i++){
@@ -104,16 +131,16 @@ class Cart extends React.Component {
                     </div>
                     <div className="cart-summary-row">
                         <div className="shipping-label">Shipping:</div>
-                        <div className="cost">$4.99</div>
+                        <div className="cost">${this.calculateShipping()}</div>
                     </div>
                     <div className="cart-summary-row">
                         <div className="tax-label">Tax:</div>
-                        <div className="cost">$1.29</div>
+                        <div className="cost">${this.calculateTax()}</div>
                     </div>
                     <hr className="divider" size="1" width="90%" color="black"></hr>
                     <div className="cart-summary-row">
                         <div className="total-label">Total:</div>
-                        <div className="cost">{this.subtotal + this.shipping + this.tax}</div>
+                        <div className="cost">${this.calculateTotal()}</div>
                     </div>
                 </div>
             </main>

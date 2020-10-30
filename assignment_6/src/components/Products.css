@@ -137,22 +137,6 @@
         font-size: 14px;
     }
 
-
-/*
-.products > div:not(:first-of-type) {
-    display: inline-block;
-    width: 22%;
-    height: 375px;
-    border-radius: 5px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 2%;
-    border-style: solid;
-    border-color: gray;
-    
-    line-height: 35px;
-}
-*/
     #product-1 {
         margin-right: 10px;
     }
@@ -230,16 +214,19 @@
 
     #couch-pillow-modal #modal-color-dropdown{
         margin-top: 30%;
+        height: 30%;
     }
 
     #couch-pillow-modal #modal-fill-dropdown{
         margin-top: 7%;
+        height: 30%;
     }
 
     #couch-pillow-modal #modal-add-to-cart {
-        margin-top: auto;
+        margin-top: 20px;
         width: 100%;
-        height: 10%;
+        height: 40%;
+        background-color: #F9DBB6;
     }
 
     #couch-pillow-modal a.close-popup {
