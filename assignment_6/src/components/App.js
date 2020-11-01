@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../logo.svg';
 
 import './App.css';
 import Header from "./Header";
@@ -7,12 +8,10 @@ import Products from "./Products";
 import Cart from "./Cart";
 import Footer from "./Footer";
 
-// main controller of child components
 class App extends React.Component {
   constructor(props) {
     super(props);
 
-    // stores the current page, number of items in the cart, and items in the cart
     this.state = {
       page: "home",
       cart: 0,
@@ -22,7 +21,6 @@ class App extends React.Component {
     this.changePage = this.changePage.bind(this);
     this.addToCart = this.addToCart.bind(this);
 
-    // dict object with string denoting page name and the component in html
     this.pages = {
         "home": <Home changePage={this.changePage}/>,
         "products": <Products changePage={this.changePage} addToCart={this.addToCart} cartItemNum={this.state.cart}/>,
@@ -30,14 +28,12 @@ class App extends React.Component {
     };
   }
 
-  // switches pages
   changePage(newPage) {
     this.setState({
       page: newPage
     });
   }
 
-  // adds an item to cart
   addToCart(cartItemNum, name, color, fill, cost) {
     this.setState((state) => {
       return {
@@ -45,10 +41,21 @@ class App extends React.Component {
         cartItems: state.cartItems.concat([{name, color, fill, cost}])
       }
     });
+
+    /* TESTING */
+    console.log("Cart Items Length: ", this.state.cartItems.length);
+
+    for(var i=0; i < this.state.cartItems.length; i++){
+      for (var j=0; j < this.state.cartItems[i].length; j++){
+        console.log(this.state.cartItems[i][j]);
+      }
+    }
   }
 
-  // render html based on the current page name stored in state
   render() {
+    console.log("current number of items in cart ", this.state.cart);
+    console.log("curret number of items in cart according to array ", this.state.cartItems);
+
     if (this.state.page == "home") {
       return (
         <div className="App">

@@ -2,7 +2,6 @@ import React from "react";
 
 //import "./Pillows.css";
 
-// handles Pillow component for display in products page
 class Pillow extends React.Component {
     constructor(props) {
         super(props);

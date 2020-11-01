@@ -1,21 +1,51 @@
 import React from "react";
+import ReactDOM from "react-dom";
 
 import "./Cart.css";
 
-// Cart component handling the cart page
 class Cart extends React.Component {
     constructor(props){
         super(props);
-        // constant variables
         this.imgExt = "./images/"
         this.shipping = 4.99;
         this.tax = 1.29;
 
+        console.log("cart items passed to cart.js: ", this.props.cartItems);
         this.productContainers = "";
         this.subtotal = 0;
+        //this.buildProductContainers();
+
+        /* TESTING */
+        /*
+        console.log("building product containers...");
+        for (let i=0; i < this.props.cartItems.length; i++){
+            console.log("Item: ", this.props.cartItems[i]);
+
+
+            this.productContainers.concat(
+                '<div className="col-5 product-container">Filler</div>'
+            );
+        }
+        */
     }
 
-    // fetch image corresponding to product name
+    /*
+    buildProductContainers() {
+        console.log("building product containers...");
+        for (let i=0; i < this.props.cartItems.length; i++){
+
+            console.log("Item: ", this.props.cartItems[i]);
+
+
+            this.productContainers.concat(
+                <div className="col-5 product-container">
+                    Filler
+                </div>
+            );
+        }
+    }
+    */
+
     getImage(productName) {
         switch (productName) {
             case "Couch Pillow":
@@ -35,7 +65,6 @@ class Cart extends React.Component {
         }
     }
 
-    // calculate costs (if cart empty, and costs zero, sets costs to be zero)
     calculateShipping() {
         if (this.subtotal == 0) {
             return "0.00"
@@ -63,7 +92,6 @@ class Cart extends React.Component {
         }
     }
 
-    // render products in cart
     renderProducts() {
         let productList = [];
         for (let i=0; i < this.props.cartItems.length; i++){
@@ -88,8 +116,8 @@ class Cart extends React.Component {
         return productList;
     }
 
-    // render cart
     render() {
+        //console.log("The cart contains: ", this.productContainers.length);
         return (
             <main>
                 <h2>Cart</h2>

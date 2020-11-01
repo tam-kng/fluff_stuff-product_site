@@ -1,16 +1,15 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import {FaShoppingCart} from "react-icons/fa";
 import {IconContext} from "react-icons";
 
 import './Header.css';
 
-// Header component containing navigation bar
 class Header extends React.Component {
     constructor(props){
         super(props);
     }
 
-    // render HTML
     render() {
         return (
             <header>
