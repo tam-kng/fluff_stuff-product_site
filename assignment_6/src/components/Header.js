@@ -14,7 +14,7 @@ class Header extends React.Component {
         return (
             <header>
                 <div className="nav">
-                    <button href="home.html">Logo</button>
+                    <button onClick={(e) => this.props.changePage("home")}>Logo</button>
     
                     <div className="nav-center">
                         <button href="pillows.html">Sheets</button>
