@@ -12,7 +12,7 @@ class Cart extends React.Component {
 
         console.log("cart items passed to cart.js: ", this.props.cartItems);
         this.productContainers = "";
-        this.subtotal = 0;
+        this.subtotal = this.props.subtotal;
         //this.buildProductContainers();
 
         /* TESTING */
@@ -66,7 +66,7 @@ class Cart extends React.Component {
     }
 
     calculateShipping() {
-        if (this.subtotal == 0) {
+        if (this.props.subtotal == 0) {
             return "0.00"
         }
         else {
@@ -75,7 +75,7 @@ class Cart extends React.Component {
     }
 
     calculateTax() {
-        if (this.subtotal == 0) {
+        if (this.props.subtotal == 0) {
             return "0.00"
         }
         else {
@@ -84,11 +84,11 @@ class Cart extends React.Component {
     }
 
     calculateTotal() {
-        if (this.subtotal == 0) {
+        if (this.props.subtotal == 0) {
             return "0.00"
         }
         else {
-            return this.subtotal + this.shipping + this.tax;
+            return this.props.subtotal + this.shipping + this.tax;
         }
     }
 
@@ -96,7 +96,9 @@ class Cart extends React.Component {
         let productList = [];
         for (let i=0; i < this.props.cartItems.length; i++){
             let productName = this.props.cartItems[i].name;
-            this.subtotal += this.props.cartItems[i].cost;
+            let productColor = this.props.cartItems[i].color;
+            let productFill = this.props.cartItems[i].fill;
+            let productCost = this.props.cartItems[i].cost;
 
             productList.push(
                 <React.Fragment key={i}>
@@ -107,6 +109,7 @@ class Cart extends React.Component {
                             <div>Color: {this.props.cartItems[i].color}</div>
                             <div>Fill: {this.props.cartItems[i].fill}</div>
                             <div>Cost: ${this.props.cartItems[i].cost}</div>
+                            <button className="remove-button" onClick={(e) => this.props.removeFromCart(productName, productColor, productFill, productCost)}>Remove</button>
                         </div>
                     </div>
                 </React.Fragment>
@@ -127,7 +130,7 @@ class Cart extends React.Component {
                 <div className="col-3 cart-summary">
                     <div className="cart-summary-row">
                         <div className="subtotal-label">Subtotal:</div>
-                        <div className="cost">${this.subtotal}.00</div>
+                        <div className="cost">${this.props.subtotal}.00</div>
                     </div>
                     <div className="cart-summary-row">
                         <div className="shipping-label">Shipping:</div>

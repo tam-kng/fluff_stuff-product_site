@@ -15,16 +15,18 @@ class App extends React.Component {
     this.state = {
       page: "home",
       cart: 0,
-      cartItems: []
+      cartItems: [],
+      cartSubtotal: 0
     };
 
     this.changePage = this.changePage.bind(this);
     this.addToCart = this.addToCart.bind(this);
+    this.removeFromCart = this.removeFromCart.bind(this);
 
     this.pages = {
         "home": <Home changePage={this.changePage}/>,
         "products": <Products changePage={this.changePage} addToCart={this.addToCart} cartItemNum={this.state.cart}/>,
-        "cart": <Cart cartItems={this.state.cartItems}/>
+        "cart": <Cart cartItems={this.state.cartItems} removeFromCart={this.removeFromCart}/>
     };
   }
 
@@ -38,7 +40,8 @@ class App extends React.Component {
     this.setState((state) => {
       return {
         cart: state.cart + 1,
-        cartItems: state.cartItems.concat([{name, color, fill, cost}])
+        cartItems: state.cartItems.concat([{name, color, fill, cost}]),
+        cartSubtotal: state.cartSubtotal + cost
       }
     });
 
@@ -50,6 +53,16 @@ class App extends React.Component {
         console.log(this.state.cartItems[i][j]);
       }
     }
+  }
+
+  removeFromCart(name, color, fill, cost) {
+    this.setState((state) => {
+      return {
+        cart: state.cart - 1,
+        cartItems: state.cartItems.splice(state.cartItems.indexOf([{name, color, fill, cost}]), 1),
+        cartSubtotal: state.cartSubtotal - cost
+      }
+    });
   }
 
   render() {
@@ -78,7 +91,7 @@ class App extends React.Component {
       return (
         <div className="App">
           <Header changePage={this.changePage} cartItemNum={this.state.cart.toString()}/>
-          <Cart cartItems={this.state.cartItems}/>
+          <Cart cartItems={this.state.cartItems} subtotal={this.state.cartSubtotal} removeFromCart={this.removeFromCart}/>
           <Footer />
         </div>
       );
