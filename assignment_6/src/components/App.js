@@ -14,7 +14,8 @@ class App extends React.Component {
 
     this.state = {
       page: "home",
-      cart: 0,
+      productNum: 1,
+      cartNum: 0,
       cartItems: [],
       cartSubtotal: 0
     };
@@ -22,12 +23,6 @@ class App extends React.Component {
     this.changePage = this.changePage.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.removeFromCart = this.removeFromCart.bind(this);
-
-    this.pages = {
-        "home": <Home changePage={this.changePage}/>,
-        "products": <Products changePage={this.changePage} addToCart={this.addToCart} cartItemNum={this.state.cart}/>,
-        "cart": <Cart cartItems={this.state.cartItems} removeFromCart={this.removeFromCart}/>
-    };
   }
 
   changePage(newPage) {
@@ -36,43 +31,57 @@ class App extends React.Component {
     });
   }
 
-  addToCart(cartItemNum, name, color, fill, cost) {
+  addToCart(name, color, fill, cost) {
+    let productNum = this.state.productNum;
+
     this.setState((state) => {
       return {
-        cart: state.cart + 1,
-        cartItems: state.cartItems.concat([{name, color, fill, cost}]),
+        // update cartItems array with a new item, assigned the current productNum
+        cartItems: state.cartItems.concat([{productNum, name, color, fill, cost}]),
+        // increment number of items currently in the cart
+        cartNum: state.cartNum + 1,
+        // increment ID assigned to items that are added to the cart
+        productNum: state.productNum + 1,
         cartSubtotal: state.cartSubtotal + cost
       }
     });
-
-    /* TESTING */
-    console.log("Cart Items Length: ", this.state.cartItems.length);
-
-    for(var i=0; i < this.state.cartItems.length; i++){
-      for (var j=0; j < this.state.cartItems[i].length; j++){
-        console.log(this.state.cartItems[i][j]);
-      }
-    }
   }
 
-  removeFromCart(name, color, fill, cost) {
+  removeFromCart(productNum, name, color, fill, cost) {
+    let itemToRemoveIndex = -1;
+
+    let items = this.state.cartItems;
+    console.log("Current Items in Cart before Removal: ", items);
+    console.log("Current Number of Items in Cart before Removal: ", items.length)
+
+    for (let i=0; i < this.state.cartItems.length; i++) {
+      if (this.state.cartItems[i].productNum == productNum) {
+          itemToRemoveIndex = i;
+      }
+    }
+
+    console.log("The index of the item to be removed: ", itemToRemoveIndex);
+
+    // NOTE: everything seems right until this point
+    items.splice(itemToRemoveIndex, 1);
+
+    console.log("New cart item", items)
+
     this.setState((state) => {
       return {
-        cart: state.cart - 1,
-        cartItems: state.cartItems.splice(state.cartItems.indexOf([{name, color, fill, cost}]), 1),
+        cartItems: items,
+        // decrement number of items in cart to reflect removal
+        cartNum: state.cartNum - 1,
         cartSubtotal: state.cartSubtotal - cost
       }
-    });
+    }, () => {console.log("The updated cartItems should be: ", this.state.cartItems);});
   }
 
   render() {
-    console.log("current number of items in cart ", this.state.cart);
-    console.log("curret number of items in cart according to array ", this.state.cartItems);
-
     if (this.state.page == "home") {
       return (
         <div className="App">
-          <Header changePage={this.changePage} cartItemNum={this.state.cart.toString()}/>
+          <Header changePage={this.changePage} cartItemNum={this.state.cartNum.toString()}/>
           <Home changePage={this.changePage}/>
           <Footer />
         </div>
@@ -81,8 +90,8 @@ class App extends React.Component {
     else if (this.state.page == "products") {
       return (
         <div className="App">
-          <Header changePage={this.changePage} cartItemNum={this.state.cart.toString()}/>
-          <Products changePage={this.changePage} addToCart={this.addToCart} cartItemNum={this.state.cart}/>
+          <Header changePage={this.changePage} cartItemNum={this.state.cartNum.toString()}/>
+          <Products changePage={this.changePage} addToCart={this.addToCart} productNum={this.state.productNum}/>
           <Footer />
         </div>
       );
@@ -90,7 +99,7 @@ class App extends React.Component {
     else if (this.state.page == "cart") {
       return (
         <div className="App">
-          <Header changePage={this.changePage} cartItemNum={this.state.cart.toString()}/>
+          <Header changePage={this.changePage} cartItemNum={this.state.cartNum.toString()}/>
           <Cart cartItems={this.state.cartItems} subtotal={this.state.cartSubtotal} removeFromCart={this.removeFromCart}/>
           <Footer />
         </div>

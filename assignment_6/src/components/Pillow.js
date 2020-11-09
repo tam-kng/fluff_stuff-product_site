@@ -5,7 +5,6 @@ import React from "react";
 class Pillow extends React.Component {
     constructor(props) {
         super(props);
-        this.cartItemNum = this.props.cartItemNum;
         this.url = this.props.url;
 
         this.name = this.props.itemName;
@@ -34,18 +33,38 @@ class Pillow extends React.Component {
         }
     }
 
+    getReference(name) {
+        switch (name) {
+            case "Couch Pillow":
+                return "#couch-pillow-modal";
+                break;
+            case "Bed Pillow":
+                return "#bed-pillow-modal";
+                break;
+            case "Floor Pouf":
+                return "#floor-pouf-modal";
+                break;
+            case "Round Pillow":
+                return "#round-pillow-modal";
+                break;
+            default:
+                break;
+        }
+    }
+
     render() {
         return (
             <div className="col-2 product-container">
                 {this.getImage(this.name)}
                 <div className="product-text">
-                    <a id={"product-" + this.props.itemNum + "-modal-link"} href="#couch-pillow-modal">{this.name}</a>
+                    <a id={"product-" + this.props.itemNum + "-modal-link"} href={this.getReference(this.name)}>{this.name}</a>
                     <div>&#9733;&#9733;&#9733;&#9733;&#9734;</div>
                 </div>
                 <div className="product-text">
                     <div>{"$" + this.price + ".00"}</div>
                 </div>
-                <button className="add-to-cart" onClick={(e) => this.props.addToCart(this.cartItemNum, this.name, this.color, this.fill, this.price)}>Add to Cart</button>
+                <button className="add-to-wishlist" onClick={(e) => this.props.addToWishlist(this.name)}>Add to Wishlist</button>
+                <button className="add-to-cart" onClick={(e) => this.props.addToCart(this.name, this.color, this.fill, this.price)}>Add to Cart</button>
             </div>
         )
     }

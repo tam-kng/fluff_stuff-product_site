@@ -87,13 +87,6 @@
     }
 
 /* Product Styles */
-/*
-.product {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-}
-*/
 
 .product-container {
     height: auto;
@@ -173,7 +166,15 @@
         float: right;
     }
 
-/* Product Modal Styles */
+/* Wishlist Styles */
+.wishlist {
+    float: left;
+    margin-top: 40px;
+    margin-left: 13.66%;
+
+}
+
+/* Couch Pillow Modal Styles */
 
 #couch-pillow-modal {
     position:fixed;
@@ -240,5 +241,211 @@
     #couch-pillow-modal:target {
         display:block;
     }
+
+/* Bed Pillow Modal Styles */
+
+#bed-pillow-modal {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.75);
+    display:none;
+}
+    #bed-pillow-modal .modal-content {
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        width:65%;
+        height: 80%;
+        padding:10px 20px;
+        background-image: url("./images/img_bed_pillow.jpg");
+        background-color: white;
+        background-repeat: no-repeat;
+        background-size: 70% 100%;
+    }
+
+    #bed-pillow-modal .product-description {
+        max-width: 23%;
+        height: 100%;
+        float: right;
+        padding-right: 50px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #bed-pillow-modal .product-description select {
+        width: 100%;
+        height: 7%;
+    }
+
+    #bed-pillow-modal #modal-color-dropdown{
+        margin-top: 30%;
+        height: 30%;
+    }
+
+    #bed-pillow-modal #modal-fill-dropdown{
+        margin-top: 7%;
+        height: 30%;
+    }
+
+    #bed-pillow-modal #modal-add-to-cart {
+        margin-top: 20px;
+        width: 100%;
+        height: 40%;
+        background-color: #F9DBB6;
+    }
+
+    #bed-pillow-modal a.close-popup {
+        position:absolute;
+        top:20px;
+        right:20px;
+        font-size:20px;
+        font-weight:600;
+        text-decoration:none;
+    }
+    #bed-pillow-modal:target {
+        display:block;
+    }
+
+/* Floor Pouf Modal Styles */
+
+#floor-pouf-modal {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.75);
+    display:none;
+}
+    #floor-pouf-modal .modal-content {
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        width:65%;
+        height: 80%;
+        padding:10px 20px;
+        background-image: url("./images/img_floor_pouf.jpg");
+        background-color: white;
+        background-repeat: no-repeat;
+        background-size: 70% 100%;
+    }
+
+    #floor-pouf-modal .product-description {
+        max-width: 23%;
+        height: 100%;
+        float: right;
+        padding-right: 50px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #floor-pouf-modal .product-description select {
+        width: 100%;
+        height: 7%;
+    }
+
+    #floor-pouf-modal #modal-color-dropdown{
+        margin-top: 30%;
+        height: 30%;
+    }
+
+    #floor-pouf-modal #modal-fill-dropdown{
+        margin-top: 7%;
+        height: 30%;
+    }
+
+    #floor-pouf-modal #modal-add-to-cart {
+        margin-top: 20px;
+        width: 100%;
+        height: 40%;
+        background-color: #F9DBB6;
+    }
+
+    #floor-pouf-modal a.close-popup {
+        position:absolute;
+        top:20px;
+        right:20px;
+        font-size:20px;
+        font-weight:600;
+        text-decoration:none;
+    }
+    #floor-pouf-modal:target {
+        display:block;
+    }
+
+/* Round Pillow Modal Styles */
+
+#round-pillow-modal {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.75);
+    display:none;
+}
+    #round-pillow-modal .modal-content {
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        width:65%;
+        height: 80%;
+        padding:10px 20px;
+        background-image: url("./images/img_round_pillow.jpg");
+        background-color: white;
+        background-repeat: no-repeat;
+        background-size: 70% 100%;
+    }
+
+    #round-pillow-modal .product-description {
+        max-width: 23%;
+        height: 100%;
+        float: right;
+        padding-right: 50px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #round-pillow-modal .product-description select {
+        width: 100%;
+        height: 7%;
+    }
+
+    #round-pillow-modal #modal-color-dropdown{
+        margin-top: 30%;
+        height: 30%;
+    }
+
+    #round-pillow-modal #modal-fill-dropdown{
+        margin-top: 7%;
+        height: 30%;
+    }
+
+    #round-pillow-modal #modal-add-to-cart {
+        margin-top: 20px;
+        width: 100%;
+        height: 40%;
+        background-color: #F9DBB6;
+    }
+
+    #round-pillow-modal a.close-popup {
+        position:absolute;
+        top:20px;
+        right:20px;
+        font-size:20px;
+        font-weight:600;
+        text-decoration:none;
+    }
+    #round-pillow-modal:target {
+        display:block;
+    }
+
+
   
   

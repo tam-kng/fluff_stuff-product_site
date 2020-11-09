@@ -13,39 +13,8 @@ class Cart extends React.Component {
         console.log("cart items passed to cart.js: ", this.props.cartItems);
         this.productContainers = "";
         this.subtotal = this.props.subtotal;
-        //this.buildProductContainers();
-
-        /* TESTING */
-        /*
-        console.log("building product containers...");
-        for (let i=0; i < this.props.cartItems.length; i++){
-            console.log("Item: ", this.props.cartItems[i]);
-
-
-            this.productContainers.concat(
-                '<div className="col-5 product-container">Filler</div>'
-            );
-        }
-        */
     }
-
-    /*
-    buildProductContainers() {
-        console.log("building product containers...");
-        for (let i=0; i < this.props.cartItems.length; i++){
-
-            console.log("Item: ", this.props.cartItems[i]);
-
-
-            this.productContainers.concat(
-                <div className="col-5 product-container">
-                    Filler
-                </div>
-            );
-        }
-    }
-    */
-
+    
     getImage(productName) {
         switch (productName) {
             case "Couch Pillow":
@@ -93,8 +62,10 @@ class Cart extends React.Component {
     }
 
     renderProducts() {
+        console.log("Rendering products in Cart.js: ", this.props.cartItems);
         let productList = [];
         for (let i=0; i < this.props.cartItems.length; i++){
+            let productNum = this.props.cartItems[i].productNum;
             let productName = this.props.cartItems[i].name;
             let productColor = this.props.cartItems[i].color;
             let productFill = this.props.cartItems[i].fill;
@@ -109,7 +80,7 @@ class Cart extends React.Component {
                             <div>Color: {this.props.cartItems[i].color}</div>
                             <div>Fill: {this.props.cartItems[i].fill}</div>
                             <div>Cost: ${this.props.cartItems[i].cost}</div>
-                            <button className="remove-button" onClick={(e) => this.props.removeFromCart(productName, productColor, productFill, productCost)}>Remove</button>
+                            <button className="remove-button" onClick={(e) => this.props.removeFromCart(productNum, productName, productColor, productFill, productCost)}>Remove</button>
                         </div>
                     </div>
                 </React.Fragment>
@@ -120,7 +91,7 @@ class Cart extends React.Component {
     }
 
     render() {
-        //console.log("The cart contains: ", this.productContainers.length);
+        console.log("The cart was rendered");
         return (
             <main>
                 <h2>Cart</h2>
